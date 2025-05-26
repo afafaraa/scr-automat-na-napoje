@@ -1,0 +1,93 @@
+package Vending_Machine_Main_System
+public
+	
+	with Data_Model;
+	with Base_Types;
+	
+	-- data types
+	data VendingMachineState
+		properties
+			Data_Model::Enumerators => ("IDLE", "DRINK_SELECTED", "WAITING_FOR_PAYMENT", "PAYMENT_RECEIVED", "MAKING_DRINK", "DRINK_READY");
+        	Data_Size => 30 Bytes;
+	end VendingMachineState;
+	
+	data AvailableDrink
+		properties
+			Data_Model::Enumerators => ("COFFEE", "TEA", "HOT_CHOCOLATE");
+        	Data_Size => 30 Bytes;
+	end AvailableDrink;
+
+	system Vending_Machine
+		features
+			drink_type: in event data port; --type of drink users can choose (coffee, tea, hot chocolate)
+			amount_payed: in event data port; --amount that user put in vending machine
+			required_amount: out event data port; --payment that is required for chosen drink
+			machine_state: out event data port VendingMachineState;
+			drink_available: out event data port;
+			
+	end Vending_Machine;
+	
+	system implementation Vending_Machine.I
+		subcomponents
+			Request_Handler: system Request_Handler.I; --for handling user requests (choosing drink)
+			Payment_Module: system Payment_Module.I; --for handling payments
+			Drink_Dispenser: system Drink_Dispenser.I; --for creating drinks	
+	end Vending_Machine.I;
+	
+    system Request_Handler
+    features
+        drink_type: in event data port AvailableDrink;
+        drink_available: in event data port Base_Types::Boolean;
+        required_amount: out event data port Base_Types::Integer;
+        payment_confirmed: in event data port;
+        order_confirmed: out event data port;
+    end Request_Handler;
+
+    system implementation Request_Handler.I
+        --todo
+    end Request_Handler.I;
+
+    system Payment_Module
+        features
+            required_amount: in event port;
+            payment_confirmed: out event port;
+        end Payment_Module;
+
+    system implementation Payment_Module.I
+        --todo
+        subcomponents
+        	Payment_Sensor: system Payment_Sensor.I;
+    end Payment_Module.I;
+
+    system Drink_Dispenser
+        features
+            drink_type: in event port;
+            drink_done: out event port;
+        end Drink_Dispenser;
+
+    system implementation Drink_Dispenser.I
+        --todo
+    	subcomponents
+    		Drink_Availability_Sensor: system Drink_Availability_Sensor.I;
+    end Drink_Dispenser.I;
+
+    system Drink_Availability_Sensor
+        features
+            drink_type: in event port;
+            available: out event port;
+        end Drink_Availability_Sensor;
+
+    system implementation Drink_Availability_Sensor.I
+        --todo
+    end Drink_Availability_Sensor.I;
+
+    system Payment_Sensor
+        features
+            payment_done: out event port;
+        end Payment_Sensor;
+
+    system implementation Payment_Sensor.I
+        --todo
+    end Payment_Sensor.I;
+	
+end Vending_Machine_Main_System;
