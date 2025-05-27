@@ -1,0 +1,26 @@
+package Types
+public
+	with Data_Model;
+	with Base_Types;
+	
+	data Button_Type
+    	properties
+        	Data_Model::Enumerators => (
+        		"COFFEE", "TEA", "HOT_CHOCOLATE"
+        	);
+        	Data_Size => 30 Bytes;
+    end Button_Type;
+    
+    data Vending_Machine_State
+		properties
+			Data_Model::Enumerators => ("IDLE", "DRINK_SELECTED", "WAITING_FOR_PAYMENT", "PAYMENT_RECEIVED", "MAKING_DRINK", "DRINK_READY");
+        	Data_Size => 30 Bytes;
+	end Vending_Machine_State;
+	
+	data Drink
+		properties
+			Data_Model::Enumerators => ("COFFEE", "TEA", "HOT_CHOCOLATE");
+        	Data_Size => 30 Bytes;
+	end Drink;
+	
+end Types;
