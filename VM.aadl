@@ -1,0 +1,361 @@
+package VM
+public
+	
+	with Base_Types;
+	with Types; 
+	with SEI;
+	with Hardware;
+
+	-- Main system
+	system Vending_Machine_System
+	end Vending_Machine_System;
+
+	system implementation Vending_Machine_System.I
+		subcomponents
+			-- Devices
+			-- Sensor devices
+			coffee_available_sensor: device DrinkAvailability.COFFEE;
+			tea_available_sensor: device DrinkAvailability.TEA;
+			hot_chocolate_available_sensor: device DrinkAvailability.HOT_CHOCOLATE;
+			
+			-- Input devices
+			payment_input_device: device Payment_Device.I;
+			drink_button_selector: device Button.I;
+			-- Screen
+			screen: device Screen.I;
+				
+			--Subsystems
+			payment_module: system Payment_Module.I;
+			drink_dispenser: system Drink_Dispenser.I;
+			
+			--Processes
+			controller: process Vending_Machine_Controller.I;	
+			
+			--Hardware
+            control_bus: bus Hardware::Internal_Control_Bus.I;
+            main_processor: processor Hardware::Vending_Machine_Processor;
+            ram: memory Hardware::Ram_Memory;
+			
+		connections
+			-- Connections from Drink Availability Sensors to Controller
+			conn_coffee_avail: port coffee_available_sensor.available -> controller.coffee_available_raw;
+			conn_tea_avail: port tea_available_sensor.available -> controller.tea_available_raw;
+			conn_hc_avail: port hot_chocolate_available_sensor.available -> controller.hot_chocolate_available_raw;
+
+			-- Connection from Drink Button Selector to Controller
+			selected_drink_sensor_conn: port drink_button_selector.drink -> controller.selected_drink_raw;
+			
+			-- Connection from Payment Device to Controller
+			payment_sensor_conn: port payment_input_device.amount_in -> controller.payment_in_raw;
+
+			-- Connections from Controller to Payment Module
+			conn_ctrl_to_pm_required: port controller.payment_module_required_amount -> payment_module.required_amount;
+			conn_ctrl_to_pm_paid: port controller.payment_module_amount_paid -> payment_module.amount_paid;
+			conn_pm_to_ctrl_confirm: port payment_module.payment_confirmed -> controller.payment_confirmation_status;
+
+			-- Connections from Controller to Drink Dispenser
+			conn_ctrl_to_dd_type: port controller.dispenser_drink_selection -> drink_dispenser.drink_type;
+			conn_dd_to_ctrl_done: port drink_dispenser.drink_done -> controller.dispensing_completed_status;
+			
+			-- Connections from Controller to Screen
+			conn_ctrl_to_screen_state: port controller.screen_display_state -> screen.display_machine_state;
+			conn_ctrl_to_screen_amount: port controller.screen_display_amount -> screen.display_required_amount;
+			conn_ctrl_to_screen_message: port controller.screen_display_message -> screen.display_message_text;
+			
+			-- Bus access connections from Control Bus to Bus Access in components
+			access_payment_module_bus: bus access control_bus -> payment_module.bus_access;
+			access_drink_dispenser_bus: bus access control_bus -> drink_dispenser.bus_access;
+			access_screen_bus: bus access control_bus -> screen.bus_access;
+			access_coffee_available_sensor_bus: bus access control_bus -> coffee_available_sensor.bus_access;
+			access_tea_available_sensor_bus: bus access control_bus -> tea_available_sensor.bus_access;
+			access_hot_chocolate_available_sensor_bus: bus access control_bus -> hot_chocolate_available_sensor.bus_access;
+			access_drink_button_selector_bus: bus access control_bus -> drink_button_selector.bus_access;
+			access_payment_input_device_bus: bus access control_bus -> payment_input_device.bus_access;
+			access_processor_bus: bus access control_bus -> main_processor.bus_access;
+			access_ram_bus: bus access control_bus -> ram.bus_access;            
+			
+		properties
+			-- Memory Bindings for subcomponents
+			Actual_Memory_Binding => (reference (ram)) applies to coffee_available_sensor;
+			Actual_Memory_Binding => (reference (ram)) applies to tea_available_sensor;
+			Actual_Memory_Binding => (reference (ram)) applies to hot_chocolate_available_sensor;
+			Actual_Memory_Binding => (reference (ram)) applies to payment_input_device;
+			Actual_Memory_Binding => (reference (ram)) applies to drink_button_selector;
+			Actual_Memory_Binding => (reference (ram)) applies to screen;
+			Actual_Memory_Binding => (reference (ram)) applies to payment_module;
+			Actual_Memory_Binding => (reference (ram)) applies to drink_dispenser;
+			Actual_Memory_Binding => (reference (ram)) applies to main_processor;
+			
+			-- Memory Bindings for controller and its subcomponents
+			Actual_Memory_Binding => (reference (ram)) applies to controller;
+			Actual_Memory_Binding => (reference (ram)) applies to controller.payment_input_handler;
+			Actual_Memory_Binding => (reference (ram)) applies to controller.drink_availability_monitor;
+			Actual_Memory_Binding => (reference (ram)) applies to controller.drink_selection_handler;
+			Actual_Memory_Binding => (reference (ram)) applies to controller.main_logic;
+			
+			-- Controller user input connections
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_payment_raw_to_handler;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_drink_sel_raw_to_handler;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_coffee_avail_raw_to_monitor;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_tea_avail_raw_to_monitor;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_hc_avail_raw_to_monitor;
+	
+			-- Internal from threads to Main Logic connections
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_payment_handler_to_logic;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_drink_sel_handler_to_logic;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_avail_coffee_to_logic;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_avail_tea_to_logic;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_avail_hc_to_logic;
+	
+			-- Machine status input connections
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_payment_status_to_logic;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_dispense_status_to_logic;
+	
+			-- Main Logic output connections
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_pm_required;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_pm_paid;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_dd_type;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_screen_state;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_screen_amount;
+			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_screen_message;
+			
+			-- Processor bindings for devices
+			Actual_Processor_Binding => (reference (main_processor)) applies to payment_input_device;
+			Actual_Processor_Binding => (reference (main_processor)) applies to drink_button_selector;
+			
+			-- Processor bindings for controller and its components	
+			Actual_Processor_Binding => (reference (main_processor)) applies to controller;
+			Actual_Processor_Binding => (reference (main_processor)) applies to controller.payment_input_handler;
+			Actual_Processor_Binding => (reference (main_processor)) applies to controller.drink_availability_monitor;
+			Actual_Processor_Binding => (reference (main_processor)) applies to controller.drink_selection_handler;
+			Actual_Processor_Binding => (reference (main_processor)) applies to controller.main_logic;
+			
+	end Vending_Machine_System.I;
+	
+	-- Process that controls Vending_Machine_System. It consists of 4 threads: 3 for reading user input:
+	-- selected drink, inserted amount of money, drink availability sensors, and main thread that manages them.
+	process Vending_Machine_Controller
+		features
+			-- Raw inputs from sensor devices
+			coffee_available_raw: in data port Base_Types::Boolean;
+			tea_available_raw: in data port Base_Types::Boolean;
+			hot_chocolate_available_raw: in data port Base_Types::Boolean;
+			selected_drink_raw: in data port Types::Drink; 
+			payment_in_raw: in data port Base_Types::Integer;
+			
+			-- Machine status inputs
+			payment_confirmation_status: in event data port Base_Types::Boolean;
+			dispensing_completed_status: in event data port Base_Types::Boolean;
+
+			-- Outputs to other modules and screen
+			payment_module_required_amount: out event data port Base_Types::Integer;
+			payment_module_amount_paid: out event data port Base_Types::Integer;
+			dispenser_drink_selection: out event data port Types::Drink; 
+			
+			screen_display_state: out event data port Types::Vending_Machine_State;
+			screen_display_amount: out event data port Base_Types::Integer;
+			screen_display_message: out event data port Types::Message;
+			
+	end Vending_Machine_Controller;
+
+	process implementation Vending_Machine_Controller.I
+		subcomponents
+			-- Threads for processing raw inputs
+			payment_input_handler: thread Payment_Input_Processing_Thread.I;
+			drink_availability_monitor: thread Drink_Availability_Processing_Thread.I;
+			drink_selection_handler: thread Drink_Selection_Processing_Thread.I;
+
+			-- Main thread
+			main_logic: thread Main_Controller_Logic_Thread.I;
+							
+		connections
+			-- Connect raw inputs of the controller to the respective threads
+			conn_payment_raw_to_handler: port payment_in_raw -> payment_input_handler.raw_amount_in;
+			conn_drink_sel_raw_to_handler: port selected_drink_raw -> drink_selection_handler.raw_drink_selection_in;
+			conn_coffee_avail_raw_to_monitor: port coffee_available_raw -> drink_availability_monitor.coffee_sensor_in;
+			conn_tea_avail_raw_to_monitor: port tea_available_raw -> drink_availability_monitor.tea_sensor_in;
+			conn_hc_avail_raw_to_monitor: port hot_chocolate_available_raw -> drink_availability_monitor.hc_sensor_in;
+
+			-- Connect handler thread outputs to main_logic inputs
+			conn_payment_handler_to_logic: port payment_input_handler.processed_amount_out -> main_logic.processed_payment_in;
+			conn_drink_sel_handler_to_logic: port drink_selection_handler.processed_drink_selection_out -> main_logic.processed_drink_selection_in;
+			conn_avail_coffee_to_logic: port drink_availability_monitor.processed_coffee_available -> main_logic.processed_coffee_available_in;
+			conn_avail_tea_to_logic: port drink_availability_monitor.processed_tea_available -> main_logic.processed_tea_available_in;
+			conn_avail_hc_to_logic: port drink_availability_monitor.processed_hc_available -> main_logic.processed_hc_available_in;
+
+			-- Connect controllers status inputs to main_logic inputs
+			conn_payment_status_to_logic: port payment_confirmation_status -> main_logic.current_payment_confirmation;
+			conn_dispense_status_to_logic: port dispensing_completed_status -> main_logic.current_dispensing_completed;
+			
+			-- Connect main_logic outputs to the controllers main output features
+			conn_logic_to_pm_required: port main_logic.cmd_payment_module_required_amount -> payment_module_required_amount;
+			conn_logic_to_pm_paid: port main_logic.cmd_payment_module_amount_paid -> payment_module_amount_paid;
+			conn_logic_to_dd_type: port main_logic.cmd_dispenser_drink_selection -> dispenser_drink_selection;
+			conn_logic_to_screen_state: port main_logic.out_screen_display_state -> screen_display_state;
+			conn_logic_to_screen_amount: port main_logic.out_screen_display_amount -> screen_display_amount;
+			conn_logic_to_screen_message: port main_logic.out_screen_display_message -> screen_display_message;
+					
+	end Vending_Machine_Controller.I;
+	
+	-- Main Controller Logic Thread
+	thread Main_Controller_Logic_Thread
+		features
+			-- Inputs from controller user input threads
+			processed_payment_in: in data port Base_Types::Integer;
+			processed_coffee_available_in: in data port Base_Types::Boolean;
+			processed_tea_available_in: in data port Base_Types::Boolean;
+			processed_hc_available_in: in data port Base_Types::Boolean;
+			processed_drink_selection_in: in data port Types::Drink;
+
+			-- Inputs from controller machine status ports
+			current_payment_confirmation: in event data port Base_Types::Boolean;
+			current_dispensing_completed: in event data port Base_Types::Boolean;
+
+			-- Outputs to controllers main output features
+			cmd_payment_module_required_amount: out event data port Base_Types::Integer;
+			cmd_payment_module_amount_paid: out event data port Base_Types::Integer;
+			cmd_dispenser_drink_selection: out event data port Types::Drink;
+			out_screen_display_state: out event data port Types::Vending_Machine_State;
+			out_screen_display_amount: out event data port Base_Types::Integer;
+			out_screen_display_message: out event data port Types::Message;
+	end Main_Controller_Logic_Thread;
+
+	thread implementation Main_Controller_Logic_Thread.I
+	end Main_Controller_Logic_Thread.I;
+	
+	-- Vending Machine subsystem for checking if inserted amount of money is enough and returning change
+	-- todo add change calculator
+    system Payment_Module
+    	features
+    		change_amount: out event data port Base_Types::Integer;
+            required_amount: in event data port Base_Types::Integer;
+            amount_paid: in event data port Base_Types::Integer;
+            payment_confirmed: out event data port Base_Types::Boolean;
+            
+            bus_access: requires bus access Hardware::Internal_Control_Bus;
+    end Payment_Module;
+
+    system implementation Payment_Module.I
+        subcomponents
+	        payment_logic: process Payment_Process.I;
+	        
+	    connections
+	        conn1: port required_amount -> payment_logic.required_amount_in;
+	        conn2: port amount_paid -> payment_logic.amount_paid_in;
+	        conn3: port payment_logic.payment_confirmed -> payment_confirmed;    	
+	        connn3: port payment_logic.change_amount -> change_amount;
+    end Payment_Module.I;
+    
+    process Payment_Process
+    	features
+	        required_amount_in: in event data port Base_Types::Integer;
+	        amount_paid_in: in event data port Base_Types::Integer;
+	        payment_confirmed: out event data port Base_Types::Boolean;
+	        change_amount: out event data port Base_Types::Integer;
+	end Payment_Process;
+	process implementation Payment_Process.I
+	end Payment_Process.I;
+
+    thread Payment_Input_Processing_Thread
+        features
+            raw_amount_in: in data port Base_Types::Integer;
+            processed_amount_out: out data port Base_Types::Integer;
+    end Payment_Input_Processing_Thread;
+    thread implementation Payment_Input_Processing_Thread.I
+    end Payment_Input_Processing_Thread.I;
+
+	device Payment_Device
+    	features
+    		amount_in: out event data port Base_Types::Integer;
+            bus_access: requires bus access Hardware::Internal_Control_Bus;
+    end Payment_Device;
+	device implementation Payment_Device.I
+    end Payment_Device.I;
+
+    system Drink_Dispenser
+        features
+            drink_type: in event data port Types::Drink;
+            drink_done: out event data port Base_Types::Boolean;
+            
+            bus_access: requires bus access Hardware::Internal_Control_Bus;
+    end Drink_Dispenser;
+
+    system implementation Drink_Dispenser.I
+    end Drink_Dispenser.I;
+    
+    device Screen
+    	features
+			display_required_amount: in event data port Base_Types::Integer;
+			display_machine_state: in event data port Types::Vending_Machine_State;
+			display_message_text: in event data port Types::Message;
+			
+			bus_access: requires bus access Hardware::Internal_Control_Bus;
+		properties
+			Dispatch_Protocol => Aperiodic; 
+    end Screen;
+    
+    device implementation Screen.I
+    end Screen.I;
+    
+    device Button
+		features
+			drink: out event data port Types::Drink; 
+			
+			bus_access: requires bus access Hardware::Internal_Control_Bus;
+		properties
+			SEI::GrossWeight => 0.1kg;
+			Dispatch_Protocol => Aperiodic;    		
+    end Button;
+    
+    device implementation Button.I
+    end Button.I;
+    
+    device DrinkAvailability
+		features
+			available: out data port Base_Types::Boolean;
+			
+			bus_access: requires bus access Hardware::Internal_Control_Bus;
+    	properties
+    		SEI::GrossWeight => 0.15kg;
+			Period => 1000ms;
+			Dispatch_Protocol => Periodic;
+	end DrinkAvailability;
+
+	device implementation DrinkAvailability.COFFEE
+	end DrinkAvailability.COFFEE;
+
+	device implementation DrinkAvailability.TEA
+	end DrinkAvailability.TEA;
+
+	device implementation DrinkAvailability.HOT_CHOCOLATE
+	end DrinkAvailability.HOT_CHOCOLATE;
+	
+    thread Drink_Availability_Processing_Thread
+        features
+            coffee_sensor_in: in data port Base_Types::Boolean;
+            tea_sensor_in: in data port Base_Types::Boolean;
+            hc_sensor_in: in data port Base_Types::Boolean;
+            
+            processed_coffee_available: out data port Base_Types::Boolean;
+            processed_tea_available: out data port Base_Types::Boolean;
+            processed_hc_available: out data port Base_Types::Boolean;
+        end Drink_Availability_Processing_Thread;
+
+    thread implementation Drink_Availability_Processing_Thread.I
+    end Drink_Availability_Processing_Thread.I;
+    
+    thread Drink_Selection_Processing_Thread
+    	features
+			raw_drink_selection_in: in data port Types::Drink; -- This now refers to the Drink type with integrated price info
+			processed_drink_selection_out: out data port Types::Drink; -- This now refers to the Drink type with integrated price info
+    	properties
+			Dispatch_Offset => 5ms;
+		    Deadline => 100ms;	
+		    Period => 150ms;
+		    Compute_Execution_Time => 0ms..10ms;	
+    end Drink_Selection_Processing_Thread;
+    
+    thread implementation Drink_Selection_Processing_Thread.I
+    end Drink_Selection_Processing_Thread.I;
+    
+end VM;

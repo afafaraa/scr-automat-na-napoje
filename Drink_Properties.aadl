@@ -1,0 +1,5 @@
+property set Drink_Properties is
+    Price_COFFEE: aadlinteger applies to (data);
+    Price_TEA: aadlinteger applies to (data);
+    Price_HOT_CHOCOLATE: aadlinteger applies to (data);
+end Drink_Properties;

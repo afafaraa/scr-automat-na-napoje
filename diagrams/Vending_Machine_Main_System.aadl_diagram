@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="c36a5521-6a69-4abc-b7b3-74d3c5bff6dd" manual="true">
+    <element uuid="0601fdbf-bc25-42fa-a42c-f670cf878e86" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Button</seg>
+      </bo>
+      <position x="347.07420349121094" y="38.0"/>
+      <size width="95.73697662353516" height="35.0"/>
+    </element>
+    <element uuid="b9b48b21-b97c-4dff-81fb-eee4ebe0f689" manual="true">
+      <element uuid="4a954a98-01cf-4e45-bbb6-cebb19d263fa" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="331.07421875" y="55.50001907348633"/>
+          <point x="343.07421875" y="55.50001907348633"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Button.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="38.0"/>
+      <size width="103.14582824707031" height="35.0"/>
+    </element>
+    <element uuid="baaec94b-6955-457c-a677-5362ef307de2" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Button_Sensor</seg>
+      </bo>
+      <position x="727.5325317382812" y="93.0"/>
+      <size width="145.39842987060547" height="35.0"/>
+    </element>
+    <element uuid="6a2e1556-002b-4dc9-91b6-9030cb9c2b6f" manual="true">
+      <element uuid="af4e6acd-3e6d-4979-be24-ce31cbb1cfb4" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="711.5325317382812" y="110.5000228881836"/>
+          <point x="723.5325317382812" y="110.5000228881836"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Button_Sensor.I</seg>
+      </bo>
+      <position x="554.7252502441406" y="93.0"/>
+      <size width="152.80728912353516" height="35.0"/>
+    </element>
+    <element uuid="4dae4862-ed94-40b0-b32d-9ba0d8d46f04" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Availability_Sensor</seg>
+      </bo>
+      <position x="459.7044219970703" y="313.0"/>
+      <size width="208.36720275878906" height="35.0"/>
+    </element>
+    <element uuid="f42229f4-1691-40f0-b37f-67b28834eaab" manual="true">
+      <element uuid="42ede475-3c1a-4cd3-86b8-85dfab4d44e3" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="443.70440673828125" y="330.5"/>
+          <point x="455.70440673828125" y="330.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Availability_Sensor.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="313.0"/>
+      <size width="215.7760467529297" height="35.0"/>
+    </element>
+    <element uuid="24e45881-a0cd-4c1d-a1ba-6e5082a7f2ad" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Dispenser</seg>
+      </bo>
+      <position x="407.0807189941406" y="148.0"/>
+      <size width="155.74349212646484" height="35.0"/>
+    </element>
+    <element uuid="8bcf7a1c-066e-4ec5-9f0d-0798097e1c8f" manual="true">
+      <element uuid="7e398308-92a6-42d2-b50a-aa35e9fc0983" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="391.0807189941406" y="165.4999542236328"/>
+          <point x="403.0807189941406" y="165.4999542236328"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Dispenser.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="148.0"/>
+      <size width="163.15235137939453" height="35.0"/>
+    </element>
+    <element uuid="8a0476fe-e447-40c5-ac42-af9e0ffc8acd" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Preparation</seg>
+      </bo>
+      <position x="415.98699951171875" y="258.0"/>
+      <size width="164.6497573852539" height="35.0"/>
+    </element>
+    <element uuid="69ae733a-8e34-448a-bf92-3dd507083f0d" manual="true">
+      <element uuid="22c19522-0cca-45c4-aac7-7b3b57069742" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="399.98699951171875" y="275.5000305175781"/>
+          <point x="411.98699951171875" y="275.5000305175781"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drink_Preparation.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="258.0"/>
+      <size width="172.0586166381836" height="35.0"/>
+    </element>
+    <element uuid="a1574000-735a-411d-9b3f-84410f82f4e3" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>DrinkAvailability</seg>
+      </bo>
+      <position x="517.4583435058594" y="530.5"/>
+      <size width="151.29037475585938" height="40.0"/>
+    </element>
+    <element uuid="05596805-dfca-451f-8646-7d753cb48533" manual="true">
+      <element uuid="589e1ae2-123f-4fd4-be7a-94c30d6fa7ff" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="501.45831298828125" y="605.5"/>
+          <point x="507.4583435058594" y="605.5"/>
+          <point x="507.4583435058594" y="560.5"/>
+          <point x="513.4583740234375" y="560.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>DrinkAvailability.COFFEE</seg>
+      </bo>
+      <position x="288.38800048828125" y="588.0"/>
+      <size width="209.07032775878906" height="35.0"/>
+    </element>
+    <element uuid="07c9ce6e-fc41-443c-85c4-526c2bf6f802" manual="true">
+      <element uuid="7311fee9-a211-489f-8c84-30bd6fe40e5d" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="501.45831298828125" y="550.5"/>
+          <point x="513.4583740234375" y="550.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>DrinkAvailability.HOT_CHOCOLATE</seg>
+      </bo>
+      <position x="223.92837524414062" y="533.0"/>
+      <size width="273.5299530029297" height="35.0"/>
+    </element>
+    <element uuid="b63edff4-3150-46b5-b08d-6d1529282117" manual="true">
+      <element uuid="aedf0cb8-a819-432d-bcef-05fcc60aa4f9" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="501.45831298828125" y="495.5"/>
+          <point x="507.4583435058594" y="495.5"/>
+          <point x="507.4583435058594" y="540.5"/>
+          <point x="513.4583740234375" y="540.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>DrinkAvailability.TEA</seg>
+      </bo>
+      <position x="316.5325469970703" y="478.0"/>
+      <size width="180.92578125" height="35.0"/>
+    </element>
+    <element uuid="12cf3c87-a745-4bc5-9cdc-26c80225519f" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Device</seg>
+      </bo>
+      <position x="768.2096405029297" y="148.0"/>
+      <size width="157.9765625" height="35.0"/>
+    </element>
+    <element uuid="b7a1c3f7-9a9a-489c-9689-cf450d83c52d" manual="true">
+      <element uuid="20adc3a2-0180-4695-b3f9-ea4d4d8baa4a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="752.2096557617188" y="165.4999542236328"/>
+          <point x="764.2096557617188" y="165.4999542236328"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Device.I</seg>
+      </bo>
+      <position x="582.82421875" y="148.0"/>
+      <size width="165.3854217529297" height="35.0"/>
+    </element>
+    <element uuid="c33bb908-b366-48e7-a2b2-07adfd25f0e7" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Module</seg>
+      </bo>
+      <position x="778.6328125" y="203.0"/>
+      <size width="160.95183563232422" height="35.0"/>
+    </element>
+    <element uuid="8e2db360-bdea-45a2-ad7c-3ee8cf572f28" manual="true">
+      <element uuid="f438fbd4-2ac4-40de-bebd-7f067807a6de" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="762.6328125" y="220.4999542236328"/>
+          <point x="774.6328125" y="220.4999542236328"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Module.I</seg>
+      </bo>
+      <position x="590.2721252441406" y="203.0"/>
+      <size width="168.3606948852539" height="35.0"/>
+    </element>
+    <element uuid="e357fd71-0139-4494-a65f-fbbaaf13f427" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Process</seg>
+      </bo>
+      <position x="793.4310150146484" y="258.0"/>
+      <size width="165.38540649414062" height="35.0"/>
+    </element>
+    <element uuid="17009d09-725c-4b20-a8e8-b47d5085a0e9" manual="true">
+      <element uuid="a3a94067-2c37-4c35-928c-225fca8d3ef4" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="777.4310302734375" y="275.5000305175781"/>
+          <point x="789.4310302734375" y="275.5000305175781"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Process.I</seg>
+      </bo>
+      <position x="600.6367492675781" y="258.0"/>
+      <size width="172.7942657470703" height="35.0"/>
+    </element>
+    <element uuid="1b903d1f-86d5-403a-bb0d-d660dc975d8d" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Sensor</seg>
+      </bo>
+      <position x="410.8046875" y="203.0"/>
+      <size width="159.46744537353516" height="35.0"/>
+    </element>
+    <element uuid="3bc539c1-447f-4375-87e3-7bb637d610cc" manual="true">
+      <element uuid="d7a66aac-9957-4ce6-9fb4-96f8e644b55d" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="394.8046875" y="220.4999542236328"/>
+          <point x="406.8046875" y="220.4999542236328"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Payment_Sensor.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="203.0"/>
+      <size width="166.87630462646484" height="35.0"/>
+    </element>
+    <element uuid="69eec602-aabf-454d-a60f-25ed1371c5b4" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Screen</seg>
+      </bo>
+      <position x="589.6549301147461" y="38.0"/>
+      <size width="99.43489074707031" height="35.0"/>
+    </element>
+    <element uuid="01441d43-d60a-4f95-8b37-2574f65fd60e" manual="true">
+      <element uuid="7a40a980-b223-4667-9a92-0c8ffef53a6a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="573.6549072265625" y="55.50001907348633"/>
+          <point x="585.6549072265625" y="55.50001907348633"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Screen.I</seg>
+      </bo>
+      <position x="462.8111877441406" y="38.0"/>
+      <size width="106.84374237060547" height="35.0"/>
+    </element>
+    <element uuid="f52f5658-acee-4ac5-a967-4294c986cfda" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Bus</seg>
+      </bo>
+      <position x="403.40234375" y="93.0"/>
+      <size width="131.32290649414062" height="35.0"/>
+    </element>
+    <element uuid="9bdccb7c-b79a-4f87-b13c-1c4266cd5cba" manual="true">
+      <element uuid="f5641724-5d12-45cc-8f3e-4a213014c3d8" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="387.40234375" y="110.5000228881836"/>
+          <point x="399.40234375" y="110.5000228881836"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Bus.impl</seg>
+      </bo>
+      <position x="223.92837524414062" y="93.0"/>
+      <size width="159.47396087646484" height="35.0"/>
+    </element>
+    <element uuid="64f8f9da-2eda-4ed7-803d-2ccca81c9a7a" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Machine_Controller</seg>
+      </bo>
+      <position x="480.4856262207031" y="423.0"/>
+      <size width="229.14842224121094" height="35.0"/>
+    </element>
+    <element uuid="24fa28f4-ca60-43b9-b069-94ba823a8aca" manual="true">
+      <element uuid="cc5d6186-bffc-4d1c-96a1-14abb39c220f" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="464.48565673828125" y="440.5"/>
+          <point x="476.4856262207031" y="440.5"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Machine_Controller.I</seg>
+      </bo>
+      <position x="223.92837524414062" y="423.0"/>
+      <size width="236.55726623535156" height="35.0"/>
+    </element>
+    <element uuid="6278b2fc-d771-4397-bceb-09b751f0680f" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Machine_System</seg>
+      </bo>
+      <position x="467.13929748535156" y="368.0"/>
+      <size width="210.61328125" height="35.0"/>
+    </element>
+    <element uuid="244e824a-7412-442a-8969-8901469d3d51" manual="true">
+      <element uuid="c7f92b15-d08e-4a84-92d6-1ea3a182b771" manual="true">
+        <element uuid="8d28735b-e9e1-4326-8ab7-fac4d9dfb1ef" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>coffee_avail_conn</seg>
+        </bo>
+        <bendpoints>
+          <point x="551.6965942382812" y="1158.5"/>
+          <point x="557.6965942382812" y="1158.5"/>
+          <point x="557.6965942382812" y="1113.5"/>
+          <point x="573.6965942382812" y="1113.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="37d0f82f-ac4a-4537-beb9-f83a987bf7ef" manual="true">
+        <element uuid="ee32e9c5-9eb3-4e42-a552-c17560c30f65" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>hot_chocolate_avail_conn</seg>
+        </bo>
+        <bendpoints>
+          <point x="551.6965942382812" y="993.5"/>
+          <point x="567.6965942382812" y="993.5"/>
+          <point x="567.6965942382812" y="1083.5"/>
+          <point x="573.6965942382812" y="1083.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="5b1aeeb6-5376-4a15-9e97-3734ba96b634" manual="true">
+        <element uuid="4936548b-f0aa-4117-87e9-ac483f69f42e" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>payment_sensor_conn</seg>
+        </bo>
+        <bendpoints>
+          <point x="551.6965942382812" y="1103.5"/>
+          <point x="573.6965942382812" y="1103.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="2671e35f-fad9-40dc-9416-5a4cfa9aa618" manual="true">
+        <element uuid="b93e5615-e213-4e31-abb0-87abe797218e" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>selected_drink_conn</seg>
+        </bo>
+        <bendpoints>
+          <point x="551.6965942382812" y="1048.5"/>
+          <point x="557.6965942382812" y="1048.5"/>
+          <point x="557.6965942382812" y="1093.5"/>
+          <point x="573.6965942382812" y="1093.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="f50c8423-1eea-4ce6-8741-1a9658c45658" manual="true">
+        <element uuid="505e5a95-c568-41cf-a4cf-6a3470b8fec9" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>unidirectional</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>connection</seg>
+          <seg>tea_avail_conn</seg>
+        </bo>
+        <bendpoints>
+          <point x="551.6965942382812" y="1213.5"/>
+          <point x="567.6965942382812" y="1213.5"/>
+          <point x="567.6965942382812" y="1123.5"/>
+          <point x="573.6965942382812" y="1123.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="1173828f-f641-4e8b-abfa-d4a5c50d616a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="451.1392822265625" y="385.5"/>
+          <point x="463.1392822265625" y="385.5"/>
+        </bendpoints>
+      </element>
+      <element uuid="2342fc06-f5f4-420b-b2de-3dd2daa45fea" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>coffee_available_sensor</seg>
+        </bo>
+        <position x="326.70570373535156" y="471.0"/>
+        <size width="200.99090576171875" height="35.0"/>
+      </element>
+      <element uuid="044fa5b7-1232-4cd9-98e6-455f4eddd5c7" manual="true">
+        <element uuid="a1a0a07a-ea63-4c7c-ae6d-78bd4330ed3d" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>comm_bus</seg>
+        </bo>
+        <position x="430.0" y="50.0"/>
+        <size width="210.0" height="70.0"/>
+      </element>
+      <element uuid="7f93cd89-08e8-400e-a1c5-39de1fe896b6" manual="true">
+        <element uuid="3d09888b-dbe7-4fea-8bae-ffde2e825165" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>coffee_available</seg>
+          </bo>
+          <position y="400.0"/>
+        </element>
+        <element uuid="2416c73a-9e9e-4808-a86b-198692169a21" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>hot_chocolate_available</seg>
+          </bo>
+          <position y="220.0"/>
+        </element>
+        <element uuid="d55d4124-d9d9-4fbf-ada9-2e7a5084e4af" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>payment_in</seg>
+          </bo>
+          <position y="265.0"/>
+        </element>
+        <element uuid="fab49ffc-9d10-4958-aca1-8316758461e9" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>selected_drink</seg>
+          </bo>
+          <position y="355.0"/>
+        </element>
+        <element uuid="35e2d970-3c2e-4ce3-8ec5-be7af7b19a6a" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>tea_available</seg>
+          </bo>
+          <position y="310.0"/>
+        </element>
+        <element uuid="6026a4fa-1078-4008-ac74-acdf7a9b21c1" manual="true">
+          <bo>
+            <seg>subcomponent</seg>
+            <seg>drink_availability_sensor</seg>
+          </bo>
+          <position x="30.0" y="160.0"/>
+          <size width="202.44921875" height="36.0"/>
+        </element>
+        <element uuid="57f7494e-a64b-4853-9a75-711138264fbc" manual="true">
+          <bo>
+            <seg>subcomponent</seg>
+            <seg>payment_sensor</seg>
+          </bo>
+          <position x="30.0" y="110.0"/>
+          <size width="155.7630157470703" height="36.0"/>
+        </element>
+        <element uuid="a4903554-546f-43e7-a023-9f6defd66c09" manual="true">
+          <bo>
+            <seg>subcomponent</seg>
+            <seg>selected_drink_sensor</seg>
+          </bo>
+          <position x="30.0" y="60.0"/>
+          <size width="190.6002655029297" height="36.0"/>
+        </element>
+        <element uuid="64c763b6-30b8-4e6d-ab1d-829d982c9f02" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>controller</seg>
+        </bo>
+        <position x="590.0" y="220.0"/>
+        <size width="412.30340576171875" height="440.0"/>
+      </element>
+      <element uuid="d8a62bc9-2683-4ddc-afc2-91658003bb5e" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>drink_button_selector</seg>
+        </bo>
+        <position x="343.0208282470703" y="361.0"/>
+        <size width="184.67578125" height="35.0"/>
+      </element>
+      <element uuid="fc8dcc11-91e5-4e02-a646-131d44afe148" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>drink_dispenser</seg>
+        </bo>
+        <position x="810.0" y="90.0"/>
+        <size width="151.31640625" height="35.0"/>
+      </element>
+      <element uuid="3c9702ac-090f-4015-8b37-bc3a6d9e37d1" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>hot_chocolate_available_sensor</seg>
+        </bo>
+        <position x="260.0" y="310.0"/>
+        <size width="247.6966094970703" height="35.0"/>
+      </element>
+      <element uuid="10a9c197-50c1-4970-914c-29e7c824402a" manual="true">
+        <element uuid="adc2e1bd-889e-4d9b-94b5-2d75cb894d36" manual="true">
+          <element uuid="f15a940b-9ec4-4142-9ba5-7930961b39ac" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>conn1</seg>
+          </bo>
+        </element>
+        <element uuid="82ce6c02-a0c9-4af7-9179-2c3c611d4a74" manual="true">
+          <element uuid="81f58485-00df-4d16-91f1-5d2c38f71928" manual="true">
+            <bo>
+              <seg>tag</seg>
+              <seg>unidirectional</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>connection</seg>
+            <seg>conn2</seg>
+          </bo>
+        </element>
+        <element uuid="6e38d42d-d103-4dec-bd21-864479ca271b" manual="true" dockArea="right">
+          <bo>
+            <seg>feature</seg>
+            <seg>payment_confirmed</seg>
+          </bo>
+          <position x="112.80729675292969"/>
+        </element>
+        <element uuid="af409ba9-1eab-4f5d-a395-92cf8bbb65e6" manual="true" dockArea="left">
+          <bo>
+            <seg>feature</seg>
+            <seg>required_amount</seg>
+          </bo>
+          <position/>
+        </element>
+        <element uuid="452e2e61-58fd-47eb-a0a0-ebc497424a1b" manual="true">
+          <bo>
+            <seg>subcomponent</seg>
+            <seg>payment_logic</seg>
+          </bo>
+          <position x="50.0" y="130.0"/>
+          <size width="143.1653594970703" height="36.0"/>
+        </element>
+        <element uuid="cdd45728-189b-4434-b160-0b5d890c8bf6" manual="true">
+          <bo>
+            <seg>tag</seg>
+            <seg>sc_type</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>payment_module</seg>
+        </bo>
+        <position x="20.0" y="120.0"/>
+        <size width="241.90365600585938" height="190.0"/>
+      </element>
+      <element uuid="c321ba23-6015-4dfc-8969-ece7f6ad0412" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>payment_sensor</seg>
+        </bo>
+        <position x="371.93359375" y="416.0"/>
+        <size width="155.7630157470703" height="35.0"/>
+      </element>
+      <element uuid="938e1746-65e4-46c2-b7cc-0081d51f2689" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>screen</seg>
+        </bo>
+        <position x="70.0" y="60.0"/>
+        <size width="97.20832824707031" height="35.0"/>
+      </element>
+      <element uuid="3a98b6d5-e6d4-4d09-8c48-b8ce89043033" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>tea_available_sensor</seg>
+        </bo>
+        <position x="344.4921875" y="526.0"/>
+        <size width="183.2044219970703" height="35.0"/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Vending_Machine_System.I</seg>
+      </bo>
+      <position x="20.0" y="670.0"/>
+      <size width="1180.0" height="843.5"/>
+    </element>
+    <bo>
+      <seg>package</seg>
+      <seg>Vending_Machine_Main_System</seg>
+    </bo>
+    <position/>
+    <size width="1200.0" height="1513.5"/>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>Vending_Machine_Main_System</seg>
+    </context>
+  </config>
+</diagram:Diagram>

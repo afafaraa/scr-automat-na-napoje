@@ -1,0 +1,34 @@
+package Hardware
+public
+	
+	with SEI;
+	
+	bus Internal_Control_Bus
+	    properties
+			SEI::GrossWeight => 0.05kg;
+			SEI::BandWidthCapacity => 20.0 Mbps;
+    end Internal_Control_Bus;
+	bus implementation Internal_Control_Bus.I
+	end Internal_Control_Bus.I;
+	
+	processor Vending_Machine_Processor
+		features
+			bus_access: requires bus access Internal_Control_Bus;
+		properties
+			SEI::MIPSCapacity => 1200.0mips;
+			SEI::GrossWeight => 0.15kg;
+	end Vending_Machine_Processor;
+	processor implementation Vending_Machine_Processor.I
+	end Vending_Machine_Processor.I;
+	
+	
+	memory Ram_Memory
+		features
+			bus_access: requires bus access Internal_Control_Bus;
+		properties
+			SEI::GrossWeight => 0.01kg;
+	end Ram_Memory;
+	memory implementation Ram_Memory.I
+	end Ram_Memory.I;
+
+end Hardware;
