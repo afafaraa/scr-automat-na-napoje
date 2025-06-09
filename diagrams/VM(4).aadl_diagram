@@ -15,8 +15,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="156.0000457763672" y="55.0"/>
-          <point x="168.0000457763672" y="55.0"/>
+          <point x="156.0" y="55.00002670288086"/>
+          <point x="168.0" y="55.00002670288086"/>
         </bendpoints>
       </element>
       <bo>
@@ -34,23 +34,6 @@
       <position x="358.0" y="478.0"/>
       <size width="282.0" height="35.0"/>
     </element>
-    <element uuid="836a9304-65f9-495d-bb2a-f3e9058d2408" manual="true">
-      <element uuid="7941a4e8-4640-4264-b9e2-dc1da5380def" manual="true">
-        <bo>
-          <seg>realization</seg>
-        </bo>
-        <bendpoints>
-          <point x="342.0000305175781" y="496.0"/>
-          <point x="353.9999694824219" y="496.0"/>
-        </bendpoints>
-      </element>
-      <bo>
-        <seg>classifier</seg>
-        <seg>Drink_Availability_Processing_Thread.I</seg>
-      </bo>
-      <position x="49.0" y="478.0"/>
-      <size width="289.0" height="35.0"/>
-    </element>
     <element uuid="c9fe499e-9eb8-4ba6-90a5-42c2698337d7" manual="true">
       <bo>
         <seg>classifier</seg>
@@ -65,8 +48,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="216.00006103515625" y="110.0"/>
-          <point x="228.00006103515625" y="110.0"/>
+          <point x="216.0" y="110.00003051757812"/>
+          <point x="228.0" y="110.00003051757812"/>
         </bendpoints>
       </element>
       <bo>
@@ -75,31 +58,6 @@
       </bo>
       <position x="49.0" y="93.0"/>
       <size width="163.0" height="35.0"/>
-    </element>
-    <element uuid="d96cc7e0-52ba-46ed-aee9-db2939efd9f6" manual="true">
-      <bo>
-        <seg>classifier</seg>
-        <seg>Drink_Selection_Processing_Thread</seg>
-      </bo>
-      <position x="350.0" y="423.0"/>
-      <size width="274.0" height="35.0"/>
-    </element>
-    <element uuid="da977722-1ffa-414f-8b9b-3e52b4ef308f" manual="true">
-      <element uuid="b588187d-86d4-4a8b-8bcf-7c8e02703546" manual="true">
-        <bo>
-          <seg>realization</seg>
-        </bo>
-        <bendpoints>
-          <point x="334.00006103515625" y="441.0"/>
-          <point x="345.9999694824219" y="441.0"/>
-        </bendpoints>
-      </element>
-      <bo>
-        <seg>classifier</seg>
-        <seg>Drink_Selection_Processing_Thread.I</seg>
-      </bo>
-      <position x="49.0" y="423.0"/>
-      <size width="281.0" height="35.0"/>
     </element>
     <element uuid="842ff0be-1766-46b7-8e43-36035353a644" manual="true">
       <bo>
@@ -115,8 +73,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="327.00006103515625" y="606.0"/>
-          <point x="339.00006103515625" y="606.0"/>
+          <point x="327.0" y="606.0"/>
+          <point x="339.0" y="606.0"/>
         </bendpoints>
       </element>
       <bo>
@@ -132,10 +90,10 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="327.00006103515625" y="551.0"/>
-          <point x="333.00006103515625" y="551.0"/>
-          <point x="333.00006103515625" y="596.0"/>
-          <point x="339.00006103515625" y="596.0"/>
+          <point x="327.0" y="551.0"/>
+          <point x="333.0" y="551.0"/>
+          <point x="333.0" y="596.0"/>
+          <point x="339.0" y="596.0"/>
         </bendpoints>
       </element>
       <bo>
@@ -151,10 +109,10 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="327.00006103515625" y="661.0"/>
-          <point x="333.00006103515625" y="661.0"/>
-          <point x="333.00006103515625" y="616.0"/>
-          <point x="339.00006103515625" y="616.0"/>
+          <point x="327.0" y="661.0"/>
+          <point x="333.0" y="661.0"/>
+          <point x="333.0" y="616.0"/>
+          <point x="339.0" y="616.0"/>
         </bendpoints>
       </element>
       <bo>
@@ -178,8 +136,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="301.00006103515625" y="330.0"/>
-          <point x="313.00006103515625" y="330.0"/>
+          <point x="301.0" y="329.9999694824219"/>
+          <point x="313.0" y="329.9999694824219"/>
         </bendpoints>
       </element>
       <bo>
@@ -203,8 +161,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="576.9998779296875" y="110.0"/>
-          <point x="588.9998779296875" y="110.0"/>
+          <point x="577.0" y="110.00003051757812"/>
+          <point x="589.0" y="110.00003051757812"/>
         </bendpoints>
       </element>
       <bo>
@@ -228,8 +186,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="330.00006103515625" y="385.0"/>
-          <point x="342.0000305175781" y="385.0"/>
+          <point x="330.0" y="385.0"/>
+          <point x="342.0" y="385.0"/>
         </bendpoints>
       </element>
       <bo>
@@ -253,8 +211,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="221.00006103515625" y="165.0"/>
-          <point x="233.00006103515625" y="165.0"/>
+          <point x="221.0" y="165.00003051757812"/>
+          <point x="233.0" y="165.00003051757812"/>
         </bendpoints>
       </element>
       <bo>
@@ -278,8 +236,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="594.9998779296875" y="165.0"/>
-          <point x="606.9998779296875" y="165.0"/>
+          <point x="595.0" y="165.00003051757812"/>
+          <point x="607.0" y="165.00003051757812"/>
         </bendpoints>
       </element>
       <bo>
@@ -303,8 +261,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="398.9999694824219" y="55.0"/>
-          <point x="410.9999694824219" y="55.0"/>
+          <point x="399.0" y="55.00002670288086"/>
+          <point x="411.0" y="55.00002670288086"/>
         </bendpoints>
       </element>
       <bo>
@@ -328,8 +286,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="290.00006103515625" y="275.0"/>
-          <point x="302.00006103515625" y="275.0"/>
+          <point x="290.0" y="274.9999694824219"/>
+          <point x="302.0" y="274.9999694824219"/>
         </bendpoints>
       </element>
       <bo>
@@ -361,8 +319,8 @@
         </bo>
         <bendpoints>
           <point x="1101.0" y="790.0"/>
-          <point x="209.00006103515625" y="785.0"/>
-          <point x="209.00006103515625" y="1265.0"/>
+          <point x="209.0" y="785.0"/>
+          <point x="209.0" y="1265.0"/>
         </bendpoints>
       </element>
       <element uuid="7bd4167b-b74b-42da-8635-6b85789f54c8" manual="true">
@@ -389,8 +347,8 @@
           <seg>access_hot_chocolate_available_sensor_bus</seg>
         </bo>
         <bendpoints>
-          <point x="240.00006103515625" y="803.0"/>
-          <point x="240.00006103515625" y="1031.0"/>
+          <point x="240.0" y="803.0"/>
+          <point x="240.0" y="1031.0"/>
         </bendpoints>
       </element>
       <element uuid="ab0aea8b-fb6a-4260-b023-6ec188f3532f" manual="true">
@@ -462,8 +420,8 @@
         </bo>
         <bendpoints>
           <point x="1121.0" y="802.0"/>
-          <point x="228.00006103515625" y="795.0"/>
-          <point x="228.00006103515625" y="1150.0"/>
+          <point x="228.0" y="795.0"/>
+          <point x="228.0" y="1150.0"/>
         </bendpoints>
       </element>
       <element uuid="85a1aea1-4aea-4de4-aed0-a3704591886b" manual="true">
@@ -627,8 +585,8 @@
           <seg>realization</seg>
         </bo>
         <bendpoints>
-          <point x="276.00006103515625" y="220.0"/>
-          <point x="288.00006103515625" y="220.0"/>
+          <point x="276.0" y="220.00001525878906"/>
+          <point x="288.0" y="220.00001525878906"/>
         </bendpoints>
       </element>
       <element uuid="511779ef-b7c4-4265-b66c-37ac822cc3a1" manual="true">
@@ -674,54 +632,6 @@
         <size width="126.0" height="140.0"/>
       </element>
       <element uuid="1ebb5a7c-1a28-4818-823b-91a7dac2a5ac" manual="true">
-        <element uuid="7487e18d-ebec-45d7-ac4c-334c3ff9e4cf" manual="true">
-          <element uuid="f11437b1-f97c-473e-a8fd-0e69f7ffff94" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_avail_coffee_to_logic</seg>
-          </bo>
-        </element>
-        <element uuid="7060699a-e2bc-4fa9-b024-14439433d878" manual="true">
-          <element uuid="d1afa5e7-e0e5-42dc-8109-6f59f85b76f6" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_avail_hc_to_logic</seg>
-          </bo>
-        </element>
-        <element uuid="f8337c69-f201-431e-9cf6-77278db08428" manual="true">
-          <element uuid="a6e6d96b-1a94-4e97-829c-57e25186e217" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_avail_tea_to_logic</seg>
-          </bo>
-        </element>
-        <element uuid="02e77703-16da-4497-8fd2-b1958f42ffcf" manual="true">
-          <element uuid="3096245c-1d0d-4374-9f00-5af506b03856" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_coffee_avail_raw_to_monitor</seg>
-          </bo>
-        </element>
         <element uuid="0f461fff-8e1e-413a-b885-bbe8b222ca9c" manual="true">
           <element uuid="deba1120-2f84-4ffa-9d8d-a70cdc7c0b4b" manual="true">
             <bo>
@@ -732,42 +642,6 @@
           <bo>
             <seg>connection</seg>
             <seg>conn_dispense_status_to_logic</seg>
-          </bo>
-        </element>
-        <element uuid="b55ccd1e-4840-4b2d-8397-e721113edd4d" manual="true">
-          <element uuid="779aa22f-10c2-4c43-9380-94850aaf1dc0" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_drink_sel_handler_to_logic</seg>
-          </bo>
-        </element>
-        <element uuid="b8e9e043-e862-4b70-924a-7d924282889b" manual="true">
-          <element uuid="379de763-7200-4407-8270-a0923d087c8f" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_drink_sel_raw_to_handler</seg>
-          </bo>
-        </element>
-        <element uuid="06a2a498-dd4f-421d-a073-c7eab9ceaa2e" manual="true">
-          <element uuid="7be22f0b-d93b-45cd-aa57-de87f4e6646b" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_hc_avail_raw_to_monitor</seg>
           </bo>
         </element>
         <element uuid="a6c05ce7-02ec-45b6-ab58-15f340ec2639" manual="true">
@@ -878,18 +752,6 @@
             <seg>conn_payment_status_to_logic</seg>
           </bo>
         </element>
-        <element uuid="7023e975-7e37-4252-9178-6d1c6c671812" manual="true">
-          <element uuid="30ef352b-3b8e-423d-9cbe-9cfbb68ce383" manual="true">
-            <bo>
-              <seg>tag</seg>
-              <seg>unidirectional</seg>
-            </bo>
-          </element>
-          <bo>
-            <seg>connection</seg>
-            <seg>conn_tea_avail_raw_to_monitor</seg>
-          </bo>
-        </element>
         <element uuid="2d96f011-8ce7-459f-af14-104dc5bce2dc" manual="true" dockArea="left">
           <bo>
             <seg>feature</seg>
@@ -982,47 +844,47 @@
           <position y="215.0"/>
         </element>
         <element uuid="13f50625-fee4-4cc4-b4c4-91dfe7331842" manual="true">
-          <element uuid="35d2d745-94e1-4083-9963-c1e632c1e495" manual="true" dockArea="left">
+          <element uuid="cd73408a-3fa0-49b9-89de-dc98f8f854a7" manual="true" dockArea="left">
             <bo>
               <seg>feature</seg>
               <seg>coffee_sensor_in</seg>
             </bo>
-            <position y="185.0"/>
+            <position y="175.0"/>
           </element>
-          <element uuid="a821357d-47bf-4a85-983a-5ac4502b47a7" manual="true" dockArea="left">
+          <element uuid="b8b578f6-21e7-495e-98fd-0ae87d94c907" manual="true" dockArea="left">
             <bo>
               <seg>feature</seg>
               <seg>hc_sensor_in</seg>
             </bo>
-            <position y="80.0"/>
+            <position y="130.0"/>
           </element>
-          <element uuid="a73ecad6-43ca-4d3c-a42f-fe76373f6849" manual="true" dockArea="right">
+          <element uuid="41ee5eb0-ff9f-4588-8f49-e6e0750bd785" manual="true" dockArea="right">
             <bo>
               <seg>feature</seg>
               <seg>processed_coffee_available</seg>
             </bo>
-            <position x="152.70054626464844" y="90.0"/>
+            <position x="152.70054626464844" y="45.0"/>
           </element>
-          <element uuid="893402ac-a0b1-4bbc-b664-b284c266601f" manual="true" dockArea="right">
+          <element uuid="08dae7ea-2c66-4f6f-953a-d62b08002e9e" manual="true" dockArea="right">
             <bo>
               <seg>feature</seg>
               <seg>processed_hc_available</seg>
             </bo>
-            <position x="174.9401092529297" y="40.0"/>
+            <position x="174.9401092529297" y="90.0"/>
           </element>
-          <element uuid="41237f07-00a0-41fd-8599-db1bb098c85d" manual="true" dockArea="right">
+          <element uuid="cd34b990-e665-442f-8a90-bf2fe224f63e" manual="true" dockArea="right">
             <bo>
               <seg>feature</seg>
               <seg>processed_tea_available</seg>
             </bo>
-            <position x="170.4869842529297" y="140.0"/>
+            <position x="170.4869842529297"/>
           </element>
-          <element uuid="542f688f-7a25-48dd-953a-c49de435e4ba" manual="true" dockArea="left">
+          <element uuid="5497d416-90f6-4d73-9e25-d0ec51d56895" manual="true" dockArea="left">
             <bo>
               <seg>feature</seg>
               <seg>tea_sensor_in</seg>
             </bo>
-            <position y="140.0"/>
+            <position y="220.0"/>
           </element>
           <element uuid="67e60a6a-037c-4a6a-91d5-678421e3edeb" manual="true">
             <bo>
@@ -1038,20 +900,6 @@
           <size width="330.0" height="260.0"/>
         </element>
         <element uuid="d13b9330-9d15-4fe1-b1f8-b2bc1f0f31d0" manual="true">
-          <element uuid="ca46cf3e-086d-4bc7-a8b0-661b15ab2a9a" manual="true" dockArea="right">
-            <bo>
-              <seg>feature</seg>
-              <seg>processed_drink_selection_out</seg>
-            </bo>
-            <position x="147.6315155029297" y="50.0"/>
-          </element>
-          <element uuid="82318df9-cb0a-46e2-8fad-46ea435c28a9" manual="true" dockArea="left">
-            <bo>
-              <seg>feature</seg>
-              <seg>raw_drink_selection_in</seg>
-            </bo>
-            <position y="50.0"/>
-          </element>
           <element uuid="44da9453-b4c5-470c-8fa1-36b4106245df" manual="true">
             <bo>
               <seg>tag</seg>
@@ -1063,7 +911,7 @@
             <seg>drink_selection_handler</seg>
           </bo>
           <position x="380.0" y="510.0"/>
-          <size width="343.4530944824219" height="90.0"/>
+          <size width="343.0" height="90.0"/>
         </element>
         <element uuid="2af2d77c-ac7a-4e10-bbdf-913966f082f5" manual="true">
           <element uuid="d2032fef-931c-4ec9-ab4a-770ac232379a" manual="true" dockArea="right">

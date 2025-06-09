@@ -1,0 +1,6 @@
+Check connection binding consistency Report
+
+Warning! controller.main_logic.cmd_payment_module_required_amount -> payment_module.payment_logic.required_amount_in: Connection source and/or destination is not bound to hardware
+Warning! controller.main_logic.cmd_payment_module_amount_paid -> payment_module.payment_logic.amount_paid_in: Connection source and/or destination is not bound to hardware
+Warning! payment_module.payment_logic.payment_confirmed -> controller.main_logic.current_payment_confirmation: Connection source and/or destination is not bound to hardware
+Warning! payment_module.payment_logic.change_amount -> change_device.amount_out: Connection source and/or destination is not bound to hardware

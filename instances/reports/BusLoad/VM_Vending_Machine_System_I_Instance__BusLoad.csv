@@ -1,0 +1,84 @@
+Bus load analysis of Vending_Machine_System_I_Instance
+
+
+"Physical Bus","Capacity (KB/s)","Budget (KB/s)","Required Budget (KB/s)","Actual (KB/s)"
+"control_bus","2500.0","0.0","0.0","0.0"
+
+"Bus control_bus has data overhead of 0 bytes"
+"Bound Virtual Bus/Connection","Capacity (KB/s)","Budget (KB/s)","Required Budget (KB/s)","Actual (KB/s)"
+"payment_input_handler.processed_amount_out -> main_logic.processed_payment_in","","0.0","","0.0"
+"drink_availability_monitor.processed_coffee_available -> main_logic.processed_coffee_available_in","","0.0","","0.0"
+"drink_availability_monitor.processed_tea_available -> main_logic.processed_tea_available_in","","0.0","","0.0"
+"drink_availability_monitor.processed_hc_available -> main_logic.processed_hc_available_in","","0.0","","0.0"
+"drink_selection_handler.processed_drink_selection_out -> main_logic.processed_drink_selection_in","","0.0","","0.0"
+"coffee_available_sensor.available -> controller.drink_availability_monitor.coffee_sensor_in","","0.0","","0.0"
+"tea_available_sensor.available -> controller.drink_availability_monitor.tea_sensor_in","","0.0","","0.0"
+"hot_chocolate_available_sensor.available -> controller.drink_availability_monitor.hc_sensor_in","","0.0","","0.0"
+"payment_input_device.amount_in -> controller.payment_input_handler.raw_amount_in","","0.0","","0.0"
+"drink_button_selector.drink -> controller.drink_selection_handler.raw_drink_selection_in","","0.0","","0.0"
+"drink_dispenser.drink_done -> controller.main_logic.current_dispensing_completed","","0.0","","0.0"
+"controller.main_logic.cmd_payment_module_required_amount -> payment_module.payment_logic.required_amount_in","","0.0","","0.0"
+"controller.main_logic.cmd_payment_module_amount_paid -> payment_module.payment_logic.amount_paid_in","","0.0","","0.0"
+"controller.main_logic.cmd_dispenser_drink_selection -> drink_dispenser.drink_type","","0.0","","0.0"
+"controller.main_logic.out_screen_display_state -> screen.display_machine_state","","0.0","","0.0"
+"controller.main_logic.out_screen_display_amount -> screen.display_required_amount","","0.0","","0.0"
+"controller.main_logic.out_screen_display_message -> screen.display_message_text","","0.0","","0.0"
+"payment_module.payment_logic.payment_confirmed -> controller.main_logic.current_payment_confirmation","","0.0","","0.0"
+
+"WARNING: Bus control_bus has no bandwidth budget"
+
+"Connection payment_input_handler.processed_amount_out -> main_logic.processed_payment_in bound to control_bus"
+"WARNING: Connection payment_input_handler.processed_amount_out -> main_logic.processed_payment_in has no bandwidth budget"
+
+"Connection drink_availability_monitor.processed_coffee_available -> main_logic.processed_coffee_available_in bound to control_bus"
+"WARNING: Connection drink_availability_monitor.processed_coffee_available -> main_logic.processed_coffee_available_in has no bandwidth budget"
+
+"Connection drink_availability_monitor.processed_tea_available -> main_logic.processed_tea_available_in bound to control_bus"
+"WARNING: Connection drink_availability_monitor.processed_tea_available -> main_logic.processed_tea_available_in has no bandwidth budget"
+
+"Connection drink_availability_monitor.processed_hc_available -> main_logic.processed_hc_available_in bound to control_bus"
+"WARNING: Connection drink_availability_monitor.processed_hc_available -> main_logic.processed_hc_available_in has no bandwidth budget"
+
+"Connection drink_selection_handler.processed_drink_selection_out -> main_logic.processed_drink_selection_in bound to control_bus"
+"WARNING: Connection drink_selection_handler.processed_drink_selection_out -> main_logic.processed_drink_selection_in has no bandwidth budget"
+
+"Connection coffee_available_sensor.available -> controller.drink_availability_monitor.coffee_sensor_in bound to control_bus"
+"WARNING: Connection coffee_available_sensor.available -> controller.drink_availability_monitor.coffee_sensor_in has no bandwidth budget"
+
+"Connection tea_available_sensor.available -> controller.drink_availability_monitor.tea_sensor_in bound to control_bus"
+"WARNING: Connection tea_available_sensor.available -> controller.drink_availability_monitor.tea_sensor_in has no bandwidth budget"
+
+"Connection hot_chocolate_available_sensor.available -> controller.drink_availability_monitor.hc_sensor_in bound to control_bus"
+"WARNING: Connection hot_chocolate_available_sensor.available -> controller.drink_availability_monitor.hc_sensor_in has no bandwidth budget"
+
+"Connection payment_input_device.amount_in -> controller.payment_input_handler.raw_amount_in bound to control_bus"
+"WARNING: Connection payment_input_device.amount_in -> controller.payment_input_handler.raw_amount_in has no bandwidth budget"
+
+"Connection drink_button_selector.drink -> controller.drink_selection_handler.raw_drink_selection_in bound to control_bus"
+"WARNING: Connection drink_button_selector.drink -> controller.drink_selection_handler.raw_drink_selection_in has no bandwidth budget"
+
+"Connection drink_dispenser.drink_done -> controller.main_logic.current_dispensing_completed bound to control_bus"
+"WARNING: Connection drink_dispenser.drink_done -> controller.main_logic.current_dispensing_completed has no bandwidth budget"
+
+"Connection controller.main_logic.cmd_payment_module_required_amount -> payment_module.payment_logic.required_amount_in bound to control_bus"
+"WARNING: Connection controller.main_logic.cmd_payment_module_required_amount -> payment_module.payment_logic.required_amount_in has no bandwidth budget"
+
+"Connection controller.main_logic.cmd_payment_module_amount_paid -> payment_module.payment_logic.amount_paid_in bound to control_bus"
+"WARNING: Connection controller.main_logic.cmd_payment_module_amount_paid -> payment_module.payment_logic.amount_paid_in has no bandwidth budget"
+
+"Connection controller.main_logic.cmd_dispenser_drink_selection -> drink_dispenser.drink_type bound to control_bus"
+"WARNING: Connection controller.main_logic.cmd_dispenser_drink_selection -> drink_dispenser.drink_type has no bandwidth budget"
+
+"Connection controller.main_logic.out_screen_display_state -> screen.display_machine_state bound to control_bus"
+"WARNING: Connection controller.main_logic.out_screen_display_state -> screen.display_machine_state has no bandwidth budget"
+
+"Connection controller.main_logic.out_screen_display_amount -> screen.display_required_amount bound to control_bus"
+"WARNING: Connection controller.main_logic.out_screen_display_amount -> screen.display_required_amount has no bandwidth budget"
+
+"Connection controller.main_logic.out_screen_display_message -> screen.display_message_text bound to control_bus"
+"WARNING: Connection controller.main_logic.out_screen_display_message -> screen.display_message_text has no bandwidth budget"
+
+"Connection payment_module.payment_logic.payment_confirmed -> controller.main_logic.current_payment_confirmation bound to control_bus"
+"WARNING: Connection payment_module.payment_logic.payment_confirmed -> controller.main_logic.current_payment_confirmation has no bandwidth budget"
+
+

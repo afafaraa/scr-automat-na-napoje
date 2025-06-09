@@ -1,0 +1,15 @@
+Weight totals Report
+
+control_bus: [L] Sum of weights / gross weight is 0.050 kg (no limit specified)
+coffee_available_sensor: [L] Sum of weights / gross weight is 0.150 kg (no limit specified)
+tea_available_sensor: [L] Sum of weights / gross weight is 0.150 kg (no limit specified)
+hot_chocolate_available_sensor: [L] Sum of weights / gross weight is 0.150 kg (no limit specified)
+payment_input_device: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+drink_button_selector: [L] Sum of weights / gross weight is 0.300 kg (no limit specified)
+screen: [L] Sum of weights / gross weight is 0.800 kg (no limit specified)
+change_device: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+Warning! drink_dispenser: [L] No net weight plus subcomponent weight or no gross weight
+ram: [L] Sum of weights / gross weight is 0.010 kg (no limit specified)
+main_processor: [L] Sum of weights / gross weight is 0.150 kg (no limit specified)
+Warning! payment_module: [L] No net weight plus subcomponent weight or no gross weight
+Vending_Machine_System_I_Instance: [L] Sum of weights / gross weight is 2.760 kg (no limit specified)

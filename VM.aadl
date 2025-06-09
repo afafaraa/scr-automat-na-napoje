@@ -23,10 +23,12 @@ public
 			drink_button_selector: device Button.I;
 			-- Screen
 			screen: device Screen.I;
-				
+			change_device: device Payment_Change_Device;
+			-- Drink Dispenser
+			drink_dispenser: device Drink_Dispenser.I;
+			
 			--Subsystems
 			payment_module: system Payment_Module.I;
-			drink_dispenser: system Drink_Dispenser.I;
 			
 			--Processes
 			controller: process Vending_Machine_Controller.I;	
@@ -52,6 +54,9 @@ public
 			conn_ctrl_to_pm_required: port controller.payment_module_required_amount -> payment_module.required_amount;
 			conn_ctrl_to_pm_paid: port controller.payment_module_amount_paid -> payment_module.amount_paid;
 			conn_pm_to_ctrl_confirm: port payment_module.payment_confirmed -> controller.payment_confirmation_status;
+			
+			-- **FIXED**: Connection from Payment Module directly to the Change Device
+			conn_pm_to_cd_amount: port payment_module.change_amount -> change_device.amount_out;
 
 			-- Connections from Controller to Drink Dispenser
 			conn_ctrl_to_dd_type: port controller.dispenser_drink_selection -> drink_dispenser.drink_type;
@@ -61,6 +66,9 @@ public
 			conn_ctrl_to_screen_state: port controller.screen_display_state -> screen.display_machine_state;
 			conn_ctrl_to_screen_amount: port controller.screen_display_amount -> screen.display_required_amount;
 			conn_ctrl_to_screen_message: port controller.screen_display_message -> screen.display_message_text;
+
+			-- **REMOVED**: Obsolete connection from the controller to the change device.
+			-- conn_ctrl_to_payment_change: port controller.payment_change_amount -> change_device.amount_out;
 			
 			-- Bus access connections from Control Bus to Bus Access in components
 			access_payment_module_bus: bus access control_bus -> payment_module.bus_access;
@@ -76,6 +84,8 @@ public
 			
 		properties
 			-- Memory Bindings for subcomponents
+			-- **ADDED**: Memory binding for the change device.
+			Actual_Memory_Binding => (reference (ram)) applies to change_device;
 			Actual_Memory_Binding => (reference (ram)) applies to coffee_available_sensor;
 			Actual_Memory_Binding => (reference (ram)) applies to tea_available_sensor;
 			Actual_Memory_Binding => (reference (ram)) applies to hot_chocolate_available_sensor;
@@ -120,6 +130,8 @@ public
 			Actual_Connection_Binding => (reference (control_bus)) applies to controller.conn_logic_to_screen_message;
 			
 			-- Processor bindings for devices
+			-- **ADDED**: Processor binding for the change device.
+			Actual_Processor_Binding => (reference (main_processor)) applies to change_device;
 			Actual_Processor_Binding => (reference (main_processor)) applies to payment_input_device;
 			Actual_Processor_Binding => (reference (main_processor)) applies to drink_button_selector;
 			
@@ -129,6 +141,8 @@ public
 			Actual_Processor_Binding => (reference (main_processor)) applies to controller.drink_availability_monitor;
 			Actual_Processor_Binding => (reference (main_processor)) applies to controller.drink_selection_handler;
 			Actual_Processor_Binding => (reference (main_processor)) applies to controller.main_logic;
+			Actual_Processor_Binding => (reference (main_processor)) applies to payment_module.payment_logic;
+			
 			
 	end Vending_Machine_System.I;
 	
@@ -155,6 +169,9 @@ public
 			screen_display_state: out event data port Types::Vending_Machine_State;
 			screen_display_amount: out event data port Base_Types::Integer;
 			screen_display_message: out event data port Types::Message;
+
+			-- **REMOVED**: This output port is no longer needed as the Payment_Module handles change directly.
+			-- payment_change_amount: out event data port Base_Types::Integer;
 			
 	end Vending_Machine_Controller;
 
@@ -224,7 +241,6 @@ public
 	end Main_Controller_Logic_Thread.I;
 	
 	-- Vending Machine subsystem for checking if inserted amount of money is enough and returning change
-	-- todo add change calculator
     system Payment_Module
     	features
     		change_amount: out event data port Base_Types::Integer;
@@ -242,8 +258,9 @@ public
 	    connections
 	        conn1: port required_amount -> payment_logic.required_amount_in;
 	        conn2: port amount_paid -> payment_logic.amount_paid_in;
-	        conn3: port payment_logic.payment_confirmed -> payment_confirmed;    	
-	        connn3: port payment_logic.change_amount -> change_amount;
+	        conn3: port payment_logic.payment_confirmed -> payment_confirmed;
+			-- **FIXED**: Corrected typo and established connection for change calculation.    	
+	        conn4: port payment_logic.change_amount -> change_amount;
     end Payment_Module.I;
     
     process Payment_Process
@@ -260,19 +277,31 @@ public
         features
             raw_amount_in: in data port Base_Types::Integer;
             processed_amount_out: out data port Base_Types::Integer;
+    	properties
+    		Dispatch_Protocol => Aperiodic;
     end Payment_Input_Processing_Thread;
     thread implementation Payment_Input_Processing_Thread.I
     end Payment_Input_Processing_Thread.I;
+    
+    device Payment_Change_Device
+    	features
+    		amount_out: in event data port Base_Types::Integer; -- Changed to event data for consistency
+    		bus_access: requires bus access Hardware::Internal_Control_Bus;
+		properties
+			SEI::GrossWeight => 0.5kg;
+    end Payment_Change_Device;
 
 	device Payment_Device
     	features
     		amount_in: out event data port Base_Types::Integer;
             bus_access: requires bus access Hardware::Internal_Control_Bus;
+		properties
+			SEI::GrossWeight => 0.5kg;
     end Payment_Device;
 	device implementation Payment_Device.I
     end Payment_Device.I;
 
-    system Drink_Dispenser
+    device Drink_Dispenser
         features
             drink_type: in event data port Types::Drink;
             drink_done: out event data port Base_Types::Boolean;
@@ -280,7 +309,7 @@ public
             bus_access: requires bus access Hardware::Internal_Control_Bus;
     end Drink_Dispenser;
 
-    system implementation Drink_Dispenser.I
+    device implementation Drink_Dispenser.I
     end Drink_Dispenser.I;
     
     device Screen
@@ -291,7 +320,7 @@ public
 			
 			bus_access: requires bus access Hardware::Internal_Control_Bus;
 		properties
-			Dispatch_Protocol => Aperiodic; 
+			SEI::GrossWeight => 0.8kg;
     end Screen;
     
     device implementation Screen.I
@@ -303,8 +332,7 @@ public
 			
 			bus_access: requires bus access Hardware::Internal_Control_Bus;
 		properties
-			SEI::GrossWeight => 0.1kg;
-			Dispatch_Protocol => Aperiodic;    		
+			SEI::GrossWeight => 0.3kg;
     end Button;
     
     device implementation Button.I
@@ -317,8 +345,6 @@ public
 			bus_access: requires bus access Hardware::Internal_Control_Bus;
     	properties
     		SEI::GrossWeight => 0.15kg;
-			Period => 1000ms;
-			Dispatch_Protocol => Periodic;
 	end DrinkAvailability;
 
 	device implementation DrinkAvailability.COFFEE
@@ -339,7 +365,10 @@ public
             processed_coffee_available: out data port Base_Types::Boolean;
             processed_tea_available: out data port Base_Types::Boolean;
             processed_hc_available: out data port Base_Types::Boolean;
-        end Drink_Availability_Processing_Thread;
+    	properties
+			Period => 1000ms;
+			Dispatch_Protocol => Periodic;
+    end Drink_Availability_Processing_Thread;
 
     thread implementation Drink_Availability_Processing_Thread.I
     end Drink_Availability_Processing_Thread.I;
@@ -349,10 +378,7 @@ public
 			raw_drink_selection_in: in data port Types::Drink; -- This now refers to the Drink type with integrated price info
 			processed_drink_selection_out: out data port Types::Drink; -- This now refers to the Drink type with integrated price info
     	properties
-			Dispatch_Offset => 5ms;
-		    Deadline => 100ms;	
-		    Period => 150ms;
-		    Compute_Execution_Time => 0ms..10ms;	
+			Dispatch_Protocol => Aperiodic;
     end Drink_Selection_Processing_Thread;
     
     thread implementation Drink_Selection_Processing_Thread.I
